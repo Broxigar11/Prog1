@@ -42,7 +42,7 @@ int main()
     for(auto v : vi)
         cout<< v << (v==vi[vi.size()-1] ? "" : ", ");
 
-    cout<<"Pairs:"<<endl;
+    cout<<"\nPairs:"<<endl;
     for(int i=0; i<vi.size(); i++)
     {
         cout<<"<"<< vd[i] <<","<< vi[i] <<">"<<endl;
@@ -62,10 +62,13 @@ int main()
     double mean = vd_sum/vd.size();
     cout<<"\nMean value: "<<mean<<endl;
 
-    vector<double> vd2 (vd.size());
-    copy_if(vd.begin(), vd.end(), vd2.begin(), [&] (const double a) {return a<mean;});
+    vector<double> vd2;
+    for(auto val : vd){
+        if(val<mean) vd2.push_back(val);
+    }
+
     cout<<"vd2 values: ";
-    for(auto v : vd)
+    for(auto v : vd2)
         cout<< v << (v==vd[vd.size()-1] ? "" : ", ");
 
     cout<<"\nvd values sorted: ";
