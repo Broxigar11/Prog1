@@ -69,7 +69,7 @@ int main()
 
     cout<<"vd2 values: ";
     for(auto v : vd2)
-        cout<< v << (v==vd[vd.size()-1] ? "" : ", ");
+        cout<< v << (v==vd2[vd.size()-1] ? "" : ", ");
 
     cout<<"\nvd values sorted: ";
     sort(vd.begin(), vd.end());
